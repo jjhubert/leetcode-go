@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+/*
+思路：通过两层循环前后前后相加去匹配是否等于目标数字
+*/
 func twoSum(nums []int, target int) []int {
 	var resSli []int
 	for i := 0; i < len(nums); i++ {
@@ -15,6 +18,11 @@ func twoSum(nums []int, target int) []int {
 	return resSli
 }
 
+/*
+思路：
+	1、先把切片转换为以值为key，下标为value的map
+	2、通过把目标数字与迭代的数相减再判断map中是否存在该key
+*/
 func twoSumPlus(nums []int, target int) []int {
 	resMap := map[int]int{}
 	for i, v := range nums {
